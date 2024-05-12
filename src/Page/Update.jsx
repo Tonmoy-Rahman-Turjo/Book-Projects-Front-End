@@ -56,7 +56,7 @@ const Update = () => {
         }}  >
             <div className="Lg:w-8/12 w-10/12 m-auto rounded-md   bg-[#f7f8f8fb]">
 
-                <div className="bg-red-700 py-4 flex justify-center items-center gap-2 bg-gradient-to-r from-[#89f35f] to-[#F3429C] rounded-t-lg ">
+                <div className="bg-red-700 py-4 flex justify-center items-center gap-2 bg-gradient-to-r from-[#86ccec] to-[#fd1e43] rounded-t-lg ">
                     <img className="w-12 rounded-lg h-12 m-auto" src={logo} alt="" />
                     <h2 className="text-center text-white text-3xl font-bold">U{text}</h2>
                     <img className="w-12 h-12 rounded-lg m-auto" src={logo} alt="" />
@@ -131,7 +131,7 @@ const Update = () => {
                     </div>
                   
 
-                    <button className="btn bg-gradient-to-r from-[#f35f84] to-[#F3429C] rounded-t-lg my-3 font-bold italic text-white text-2xl lg:w-[300px] m-auto">Update</button>
+                    <button className="btn bg-gradient-to-r from-[#5ff35f] to-[#F3429C] rounded-t-lg my-3 font-bold italic text-white text-2xl lg:w-[300px] m-auto">Update</button>
 
                 </form>
             </div>
