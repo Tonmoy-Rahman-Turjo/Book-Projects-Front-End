@@ -5,10 +5,14 @@ import background from './../assets/360_F_688663136_CYDZXf10utvUG7QScsByISc5AaED
 import { useTypewriter } from 'react-simple-typewriter'
 import logo from './../assets/png-clipart-logo-book-cartoon-books-cartoon-character-supplies.png'
 import UseAuth from "../Reuse/UseAuth/UseAuth";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 const Update = () => {
-    const { user } = UseAuth()
+    const [book, setBooks] = useState()
+    const{id} = useParams()
+    // console.log(id)
     const [text] = useTypewriter({
-        words: ['dd Your Book'],
+        words: ['pdate your book'],
         loop: 200
     })
     const handelbookAdd = event => {
@@ -16,27 +20,36 @@ const Update = () => {
         const form = event.target;
         const photourl = form.photourl.value;
         const name = form.name.value;
-        const quntity = parseInt(form.quantity.value);
+       
         const author = form.author.value;
         const category = form.category.value;
         const rating = parseInt(form.rating.value);
-        const description = form.description.value;
-        const email = user.email;
-        const addBook = { email, photourl, name, quntity, author, category, rating, description }
-        console.log(addBook)
-        fetch('http://localhost:5000/addbook', {
-            method: 'POST',
+       
+        const updateBook = { photourl, name, author, category, rating}
+      
+        fetch(`http://localhost:5000/updates/${id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(addBook)
+            body: JSON.stringify(updateBook)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
             })
-
+           
+           
     }
+    useEffect(()=>{
+        fetch(`http://localhost:5000/update/${id}`) 
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+            setBooks(data)
+        })       
+    },[id])
+    
     return (
         <div className="py-20 pb-28   " style={{
             backgroundImage: `url(${background})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover'
@@ -45,7 +58,7 @@ const Update = () => {
 
                 <div className="bg-red-700 py-4 flex justify-center items-center gap-2 bg-gradient-to-r from-[#89f35f] to-[#F3429C] rounded-t-lg ">
                     <img className="w-12 rounded-lg h-12 m-auto" src={logo} alt="" />
-                    <h2 className="text-center text-white text-3xl font-bold">A{text}</h2>
+                    <h2 className="text-center text-white text-3xl font-bold">U{text}</h2>
                     <img className="w-12 h-12 rounded-lg m-auto" src={logo} alt="" />
                 </div>
                 <form onSubmit={handelbookAdd} className="card-body">
