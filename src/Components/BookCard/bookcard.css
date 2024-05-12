@@ -1,0 +1,28 @@
+
+
+
+.hero {
+   
+  
+    transition: transform 0.3s ease; /* Apply transition to the transform property */
+  }
+.hero:hover{
+    /* background: #0000005b; */
+    /* transition: 2s; */
+    /* position: relative;
+    
+    transition: 1s;
+    cursor: pointer; */
+    bottom: 20px;
+    transform: translateY(-30px);
+  
+    transition: 1s;
+}
+.test:hover{
+    background-color: rgba(99, 250, 12, 0.637);
+    transition: 1;
+}
+.bts:hover{
+    color: white;
+    background: rgba(255, 0, 0, 0.842);
+}
