@@ -15,7 +15,8 @@ import Login from './Page/Login';
 import Register from './Components/Register/Register';
 import BorrowedBooks from './Page/BorrowedBooks';
 import AuthProvider from './AuthProvider/AuthProvider';
-import PrivetRoute from './PrivetRoute/PrivetRoute';
+import Update from './Page/Update';
+// import PrivetRoute from './PrivetRoute/PrivetRoute';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -47,7 +48,12 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/update/:id',
+        element: <Update></Update>
       }
+      
     ],
   },
 ]);
