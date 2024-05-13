@@ -62,13 +62,14 @@ const Login = () => {
   const [showpassowrd, setpassword] = useState(false)
   return (
     <div>
-      <div className="hero min-h-screen bg-[#F0F2F5] ">
+      <div className="min-h-screen  bg-[#F0F2F5] ">
         <div className=" my-10 md:p-10  bg-[#7C2AE8] rounded">
           <h2 className=' text-center font-extrabold md:text-4xl pb-4 bg-gradient-to-r from-white to-reed-500  text-transparent bg-clip-text'>P{text}</h2>
           <div className="hero-content flex-col  gap-10  lg:flex-row-reverse">
 
             <div className="card shadow-2xl  lg:w-96 w-full  bg-base-100">
-              <div className='rounded-xl'>
+            {/* className="border-4 shadow-2xl shadow-emerald-950 rounded bg-gradient-to-r from-[#3cccc5] to-[#3ef575] bg-[#e95959] */}
+              <div className='rounded-t-lg bg-gradient-to-r from-[#cc3c7f] to-[#f113d4] ' >
                 <h2 className='text-2xl rounded-t-lg font-extrabold italic text-center py-5 text-white '>Login form</h2>
               </div>
               <form onSubmit={handelLogin} className="card-body pb-0">

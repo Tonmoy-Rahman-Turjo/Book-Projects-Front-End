@@ -15,7 +15,7 @@ const Bannar = () => {
         typeSpeed:80,
         delaySpeed:50,
        
-        onLoopDone: () => console.log(`loop completed after 120 runs.`)
+        // onLoopDone: () => console.log(`loop completed after 120 runs.`)
     })
 
 
@@ -33,8 +33,8 @@ const Bannar = () => {
       navigation={true}
       pagination={{ clickable: true }}
       
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+    //   onSlideChange={() => console.log('slide change')}
+    //   onSwiper={(swiper) => console.log(swiper)}
       autoplay={true}
       
     //   className="mySwiper"

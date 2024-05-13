@@ -16,6 +16,9 @@ import Register from './Components/Register/Register';
 import BorrowedBooks from './Page/BorrowedBooks';
 import AuthProvider from './AuthProvider/AuthProvider';
 import Update from './Page/Update';
+import Category from './Page/Category';
+import ViewDetels from './Components/ViewDetels/ViewDetels';
+
 // import PrivetRoute from './PrivetRoute/PrivetRoute';
 const router = createBrowserRouter([
   {
@@ -40,10 +43,23 @@ const router = createBrowserRouter([
         path: "/borrowedbooks",
         element: <BorrowedBooks></BorrowedBooks>,
       },
+      { path:'/allbook/:id',
+      element: <ViewDetels></ViewDetels>,
+      // loader: ({params}) => fetch(`http://localhost:5000/allbook/6641051731b76dbcbb89dbe8`) 
+      loader: ({params}) => fetch(`http://localhost:5000/allbook/${params.id}`) 
+      
+
+      },
      
       {
         path:'/login',
         element: <Login></Login>
+      },
+      {
+        path:'/category/:category',
+        element:<Category></Category>,
+        loader: ({params}) => fetch(`http://localhost:5000/category/${params.category}`) 
+        
       },
       {
         path: '/register',

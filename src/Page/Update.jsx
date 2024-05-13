@@ -1,14 +1,14 @@
 
 
 import { FaStarOfLife } from "react-icons/fa";
-import background from './../assets/360_F_688663136_CYDZXf10utvUG7QScsByISc5AaEDf68F.jpg'
+// import background from './../assets/360_F_688663136_CYDZXf10utvUG7QScsByISc5AaEDf68F.jpg'
 import { useTypewriter } from 'react-simple-typewriter'
 import logo from './../assets/png-clipart-logo-book-cartoon-books-cartoon-character-supplies.png'
-import UseAuth from "../Reuse/UseAuth/UseAuth";
+// import UseAuth from "../Reuse/UseAuth/UseAuth";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 const Update = () => {
-    const [book, setBooks] = useState()
+    const [update, setUpdate] = useState({})
     const{id} = useParams()
     // console.log(id)
     const [text] = useTypewriter({
@@ -46,14 +46,16 @@ const Update = () => {
         .then(res => res.json())
         .then(data =>{
             console.log(data)
-            setBooks(data)
+            setUpdate(data)
         })       
     },[id])
-    
+   
+
     return (
         <div className="py-20 pb-28   " style={{
-            backgroundImage: `url(${background})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover'
+            backgroundImage: `url(https://i.postimg.cc/8CbHjQw7/pngtree-back-to-school-rectangular-blackboard-education-book-pen-holder-image-321417.jpg)`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover'
         }}  >
+            {/* <img src="https://i.postimg.cc/8CbHjQw7/pngtree-back-to-school-rectangular-blackboard-education-book-pen-holder-image-321417.jpg" alt="" /> */}
             <div className="Lg:w-8/12 w-10/12 m-auto rounded-md   bg-[#f7f8f8fb]">
 
                 <div className="bg-red-700 py-4 flex justify-center items-center gap-2 bg-gradient-to-r from-[#86ccec] to-[#fd1e43] rounded-t-lg ">
@@ -69,7 +71,7 @@ const Update = () => {
                                 <span className="text-red-800 text-[8px]"><FaStarOfLife /></span>
                             </div>
                         </label>
-                        <input type="text" placeholder="Img-URL" name="photourl" className="input input-bordered bg-[#8987ff3d]" required />
+                        <input type="text" placeholder="Img-URL" defaultValue={update.photourl} name="photourl" className="input input-bordered bg-[#8987ff3d]" required />
                     </div>
                     <div className="flex flex-col lg:flex-row gap-10 ">
 
@@ -80,7 +82,7 @@ const Update = () => {
                                     <span className="text-red-800 text-[8px]"><FaStarOfLife /></span>
                                 </div>
                             </label>
-                            <input type="text" placeholder=" Type a Book Name" name="name" className="input input-bordered text-white bg-[#48eefa44]" required />
+                            <input type="text" defaultValue={update.name} placeholder=" Type a Book Name" name="name" className="input input-bordered text-white bg-[#48eefa44]" required />
                         </div>
                         <div className="form-control w-full lg:w-1/2">
                             <label className="label">
@@ -89,7 +91,7 @@ const Update = () => {
                                     <span className="text-red-800 text-[8px]"><FaStarOfLife /></span>
                                 </div>
                             </label>
-                            <input type="text" placeholder=" Type a Book Name" name="author" className="input input-bordered text-white font-bold bg-[#48eefa44]" required />
+                            <input type="text" defaultValue={update.author}  placeholder=" Type a Book Name" name="author" className="input input-bordered text-white font-bold bg-[#48eefa44]" required />
                         </div>
 
                     </div>
@@ -101,7 +103,7 @@ const Update = () => {
                                     <span className="text-red-800 text-[8px]"><FaStarOfLife /></span>
                                 </div>
                             </label>
-                            <input type="text" placeholder=" Rating" name="rating" className="input input-bordered text-white font-bold bg-[#48eefa44]" required />
+                            <input type="text" defaultValue={update.rating} placeholder=" Rating" name="rating" className="input input-bordered text-white font-bold bg-[#48eefa44]" required />
                         </div>
 
                         <div className="form-control w-full lg:w-1/2">
@@ -114,7 +116,7 @@ const Update = () => {
                             <select
 
                                 name="category"
-
+                                   defaultValue={update.category}
                                 className=" p-3 bg-[#48eefa44]  border-2  rounded-md "
                                 required
                                 type="text"
