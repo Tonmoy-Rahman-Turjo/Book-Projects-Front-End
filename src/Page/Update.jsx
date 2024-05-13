@@ -1,5 +1,5 @@
 
-
+import Swal from "sweetalert2";
 import { FaStarOfLife } from "react-icons/fa";
 // import background from './../assets/360_F_688663136_CYDZXf10utvUG7QScsByISc5AaEDf68F.jpg'
 import { useTypewriter } from 'react-simple-typewriter'
@@ -10,7 +10,7 @@ import { useParams } from "react-router-dom";
 const Update = () => {
     const [update, setUpdate] = useState({})
     const{id} = useParams()
-    // console.log(id)
+   
     const [text] = useTypewriter({
         words: ['pdate your book'],
         loop: 200
@@ -37,6 +37,14 @@ const Update = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                if(data.modifiedCount){
+                    Swal.fire({
+                        title: 'success!',
+                        text: 'coffee update sucessfuly',
+                        icon: 'success',
+                        confirmButtonText: 'oky'
+                      })
+                }  
             })
            
            
