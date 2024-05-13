@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import UseAuth from "../../Reuse/UseAuth/UseAuth";
-
+import Swal from 'sweetalert2'
 
 
 const ViewDetels = () => {
@@ -24,6 +24,19 @@ const ViewDetels = () => {
             },
             body:JSON.stringify(borrow)
         })
+        .then(res => res.json())
+        .then( data =>{
+            if(data.insertedId){
+              Swal.fire({
+                position: "center",
+                icon: "success",
+                title: " add Borrowed Books ",
+                showConfirmButton: false,
+                timer: 1500
+              });
+            }
+            console.log(data)
+          })
         console.log(user)
     }
     return (
@@ -41,10 +54,12 @@ const ViewDetels = () => {
                         <h2 className="text-black font-bold text-base">Category p-<span className="ml-2 text-green-700 font-bold">{viewdetelse.category}</span></h2>
                     </div>
                     <h2 className="flex gap-2  text-black font-bold">Rating:-<span>{viewdetelse.rating}</span></h2>
+                    <h2 className="flex gap-2  text-black font-bold">Quantity:-<span>{viewdetelse.quntity}</span></h2>
+                    <h2 className="fl ex gap-2 text-black font-bold">Quantity:-<span>{viewdetelse.description}</span></h2>
 
                     <div className=" flex justify-center">
                     
-                        <label htmlFor="my_modal_6" className="btn">Borrow</label>
+                        <label htmlFor="my_modal_6" className="btn bg-black text-white">Borrow</label>
 
                         {/* Put this part before </body> tag */}
                         <input type="checkbox" id="my_modal_6" className="modal-toggle" />
@@ -98,7 +113,7 @@ const ViewDetels = () => {
                                     </div>
                                     <div className="form-control mt-6">
                                         {/* <button type="submit" className="btn  btn-primary">Return</button> */}
-                                        <input type="submit" value="Submit" />
+                                        <input className="bg-red-600 text-white text-2xl rounded hover:bg-green-800 " type="submit" value="Submit" />
                                     </div>
                                 </form>
 
