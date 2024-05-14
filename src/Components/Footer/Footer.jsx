@@ -25,7 +25,7 @@ const Footer = () => {
            <div>
            <div className='flex items-center justify-center gap-5'>
             <img className='h12 w-12  rounded-full' src={logo} alt="" />
-               <h2 className="lg:text-3xl text-base font-extrabold italic bg-gradient-to-r from-[#0c1bf0] to-[#5bdb42] bg-clip-text text-transparent briemhand "> Book World</h2>
+               <h2 className="lg:text-3xl text-base font-extrabold italic bg-gradient-to-r from-[#0c1bf0] to-[#5bdb42] bg-clip-text text-transparent briemhand "> Book Point</h2>
             </div>
               <div className='md:bg-white rounded-lg my-2 shadow-2xl shadow-blue-400'>
                 <input type="email" name="email" className='p-2 rounded-l-md outline-0' placeholder='Type your email' id="" />

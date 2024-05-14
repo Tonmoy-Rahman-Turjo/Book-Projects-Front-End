@@ -8,7 +8,7 @@ import { FaStar } from "react-icons/fa";
 const Bookcard = ({ bookCard }) => {
     const { photourl, name, author, category, rating, _id } = bookCard
     const [text] = useTypewriter({
-        words: ['ook World'],
+        words: ['ook Point'],
         loop: 0,
         onDelay: 100,
     })

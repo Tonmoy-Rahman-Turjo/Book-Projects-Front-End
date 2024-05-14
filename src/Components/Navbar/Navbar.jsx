@@ -36,7 +36,7 @@ const Navbar = () => {
             <div className="flex  shadow-lg shadow-[#353333d2]  z-50  py-3 my5 bg-[#4fe7d36e] bg-gradient-to-r from-[#e05ea667] to-[#8abb3056] justify-around items-center">
                 <div className="flex  items-center gap-2"> 
                     <img className="w-10 h-10 m-auto rounded-full" src={logo} alt="" />
-                    <h2 className="lg:text-3xl text-base font-extrabold italic bg-gradient-to-r from-[#0c1bf0] to-[#42dbba] bg-clip-text text-transparent briemhand ">Book World</h2>
+                    <h2 className="lg:text-3xl text-base font-extrabold italic bg-gradient-to-r from-[#0c1bf0] to-[#42dbba] bg-clip-text text-transparent briemhand ">Book Point</h2>
                 </div>
                 {/* scend */}
                 <div className="item">
