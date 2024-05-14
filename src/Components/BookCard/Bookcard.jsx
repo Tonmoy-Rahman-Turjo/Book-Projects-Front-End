@@ -3,6 +3,8 @@ import { useTypewriter } from 'react-simple-typewriter'
 import logo from '../../assets/png-clipart-logo-book-cartoon-books-cartoon-character-supplies.png'
 import './bookcard.css'
 import { Link } from 'react-router-dom';
+import Rating from 'react-rating';
+import { FaStar } from "react-icons/fa";
 const Bookcard = ({ bookCard }) => {
     const { photourl, name, author, category, rating, _id } = bookCard
     const [text] = useTypewriter({
@@ -31,7 +33,13 @@ const Bookcard = ({ bookCard }) => {
                         <div className="flex justify-around">
 
                             <h2 className="mr-2   font-bese pb-2 font-bold text-[#724dfa] ">Category:-<span className="ml-3 text-green-800 font-bold">{category}</span></h2>
-                            <h2 className="mr-2 font-bese pb-2 font-bold text-[#724dfa] ">Rating:-<span className="ml-3 text-green-800">{rating}</span></h2>
+                           <h2 className="mr-2 font-bese pb-2 font-bold text-[#724dfa] ">Rating:-<span className="ml-3 text-green-800"><Rating
+                                    emptySymbol={<FaStar color="#ccc" />} 
+                                    fullSymbol={<FaStar color="#ffc107" />} 
+                                    initialRating={rating}
+                                    readonly
+                                /></span></h2>
+                           
                         </div>
                         <div className="flex justify-center px-3 w-full " >
                             <Link to={`/update/${_id}`}> <button className="btn text-center bts text-white text-lg font-bold w-full bg-gradient-to-r from-[#518edf] to-[#f11fe7] mb-3 ">Update</button></Link>
