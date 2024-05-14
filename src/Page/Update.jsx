@@ -23,11 +23,12 @@ const Update = () => {
        
         const author = form.author.value;
         const category = form.category.value;
-        const rating = parseInt(form.rating.value);
+        const rating = form.rating.value;
        
         const updateBook = { photourl, name, author, category, rating}
       
-        fetch(`http://localhost:5000/updates/${id}`, {
+        // fetch(`http://localhost:5000/updates/${id}`, {
+        fetch(`https://assingemt-elevent-server-site.vercel.app/updates/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -40,7 +41,7 @@ const Update = () => {
                 if(data.modifiedCount){
                     Swal.fire({
                         title: 'success!',
-                        text: 'coffee update sucessfuly',
+                        text: ' update sucessfuly',
                         icon: 'success',
                         confirmButtonText: 'oky'
                       })
@@ -50,7 +51,8 @@ const Update = () => {
            
     }
     useEffect(()=>{
-        fetch(`http://localhost:5000/update/${id}`) 
+        // fetch(`http://localhost:5000/update/${id}`) 
+        fetch(`https://assingemt-elevent-server-site.vercel.app/update/${id}`) 
         .then(res => res.json())
         .then(data =>{
             console.log(data)
@@ -133,7 +135,7 @@ const Update = () => {
                                 <option value="thriller" selected>Thriller</option>
                                 <option value="history" selected> History </option>
                                 <option value="drama" selected> Drama</option>
-                                <option value="sci-Fi," selected> Sci-Fi</option>
+                                <option value="sci-Fi" selected> Sci-Fi</option>
 
 
                             </select>

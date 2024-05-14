@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTypewriter } from 'react-simple-typewriter'
 import UseAuth from '../../Reuse/UseAuth/UseAuth';
 import { useState } from 'react';
@@ -8,6 +8,9 @@ import { ToastContainer, toast } from 'react-toastify';
   import { IoEye } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa";
 const Register = () => {
+  const location = useLocation()
+  const navigat = useNavigate()
+  const forms = location.state || '/'
   const [showpassword, setShowpassword] = useState(false)
   const [success, setSuccess] = useState('')
   const [error, setError]= useState('')
@@ -44,6 +47,7 @@ const Register = () => {
        
        .then(result =>{
              setSuccess(toast("Wow Complite your Registion Successfully!"))
+             navigat(forms)
         console.log('mama akta user paiya gase', result)
        })
        .catch(error =>{
@@ -53,8 +57,8 @@ const Register = () => {
   }
     return (
         <div>
-        <div className="hero min-h-screen bg-[#F0F2F5]">
-  <div className=" my-10 md:p-10 bg-[#7C2AE8] rounded">
+        <div className=" min-h-screen bg-[#F0F2F5]">
+  <div className="  md:p-10 bg-[#7C2AE8] rounded">
      <h2 className=' text-center font-extrabold md:text-4xl pb-4 bg-gradient-to-r from-white to-reed-500  text-transparent bg-clip-text'>P{text}</h2>
   <div className="hero-content flex-col gap-10  lg:flex-row-reverse">
     

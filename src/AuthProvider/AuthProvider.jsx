@@ -5,13 +5,14 @@ import auth from "../../public/firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
 
 import { GithubAuthProvider } from "firebase/auth";
+import axios, { Axios } from "axios";
 export const AuthContxt = createContext(null)
-const google = new GoogleAuthProvider()
+const providers = new GoogleAuthProvider()
 
 const provider = new GithubAuthProvider();
 const AuthProvider = ({children}) => {
       const [user, setUser] = useState(null)
-      const [lodding, setLoding] = useState(true)
+      const [loding, setLoding] = useState(true)
       const creatUser = (email, password) =>{
           return createUserWithEmailAndPassword(auth, email, password)
       }
@@ -23,7 +24,7 @@ const AuthProvider = ({children}) => {
     //   google-Authonication
       const googleLogin =()=>{
         setLoding(true)
-        return signInWithPopup(auth, google)
+        return signInWithPopup(auth, providers)
       }
       const login = (email, password)=>{
         // lodding(true)
@@ -35,15 +36,34 @@ const AuthProvider = ({children}) => {
         return signOut(auth)
         
       }
-    const authUserInfo ={user, creatUser, login, logOut, googleLogin, githubLogin, lodding}
+    const authUserInfo ={user, creatUser, login, logOut, googleLogin, githubLogin, loding}
     useEffect(()=>{
      const unsubcribe  = onAuthStateChanged(auth, creatUser=>{
       setUser(creatUser)
+      console.log(user)
+      console.log('creatuser', creatUser)
+      // const userEmail = creatUser?.email || user?.email
+      // const logUser ={email:userEmail}
+      // if(creatUser){
+      //       axios.post('http://localhost:5000/jwt', logUser, {withCredentials: true})
+      //       .then(res => {
+      //         console.log('token response',res.data)
+      //       })
+      // }
+      // else{
+      //   axios.post('http://localhost:5000/logout', logUser,{
+      //     withCredentials: true,
+      //   })
+      //   .then(res=>{
+      //     console.log(res.data)
+      //   })
+      // }
         setLoding(false)
         })
         return () =>{
           return unsubcribe
         }
+       
     },[])
     return (
         <AuthContxt.Provider value={authUserInfo}>

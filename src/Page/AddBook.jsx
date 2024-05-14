@@ -4,6 +4,8 @@ import background from './../assets/360_F_688663136_CYDZXf10utvUG7QScsByISc5AaED
 import { useTypewriter } from 'react-simple-typewriter'
 import logo from './../assets/png-clipart-logo-book-cartoon-books-cartoon-character-supplies.png'
 import UseAuth from "../Reuse/UseAuth/UseAuth";
+import Swal from "sweetalert2";
+import { useEffect } from "react";
 // import logos from './../../assets/png-clipart-logo-book-cartoon-books-cartoon-character-supplies.png'
 const AddBook = () => {
     const {user} = UseAuth()
@@ -19,24 +21,38 @@ const AddBook = () => {
          const quntity = parseInt(form.quantity.value);
          const author = form.author.value;
          const category = form.category.value;
-         const rating = parseInt(form.rating.value);
+         const rating = form.rating.value;
          const description = form.description.value;
          const email = user.email;
          const addBook ={ email,photourl, name, quntity, author, category, rating, description}
          console.log(addBook)
-         fetch('http://localhost:5000/addbook',{
-            method: 'POST',
-            headers:{
-              'content-type' : 'application/json'
-            },
-            body: JSON.stringify(addBook)
-         } )
-         .then(res => res.json())
-         .then( data => {
-            console.log(data)
-         })
+        //  fetch('http://localhost:5000/addbook',{
+            // fetch('https://assingemt-elevent-server-site.vercel.app/addbook',{
+                // credentials: 'include',
+            fetch('https://assingemt-elevent-server-site.vercel.app/addbook',{
+                
+                method: 'POST',
+                headers:{
+                  'content-type' : 'application/json'
+                },
+                body: JSON.stringify(addBook)
+             } )
+             .then(res => res.json())
+             .then( data => {
+                if(data.insertedId){
+                    Swal.fire({
+                      position: "center",
+                      icon: "success",
+                      title: "Add successfully",
+                      showConfirmButton: false,
+                      timer: 1500
+                    });
+                  }
+                console.log(data)
+             })
 
       }
+     
     return (
      <div className="py-10  " style={{ 
         backgroundImage: `url(${background})`,  backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover'}}  >
@@ -109,7 +125,7 @@ const AddBook = () => {
                 <option value="thriller" selected>Thriller</option>
                 <option value="history" selected> History </option>
                 <option value="drama" selected> Drama</option>
-                <option value="sci-Fi," selected> Sci-Fi</option>
+                <option value="sci-Fi" selected> Sci-Fi</option>
                 
                
               </select>

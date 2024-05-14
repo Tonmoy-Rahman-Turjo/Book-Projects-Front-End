@@ -1,20 +1,25 @@
 import { useEffect, useState } from "react";
 
 import Swal from "sweetalert2";
+import UseAuth from "../Reuse/UseAuth/UseAuth";
 
 const BorrowedBooks = () => {
+  const{user}= UseAuth()
   const[control, setControl] = useState(false)
 const [datas, setData] = useState()
   useEffect(()=>{
-    fetch('http://localhost:5000/borrows')
+    // fetch('http://localhost:5000/borrows')
+    // fetch('https://assingemt-elevent-server-site.vercel.app/borrows')
+    fetch(`https://assingemt-elevent-server-site.vercel.app/borrows/${user.email}`)
     .then(res =>res.json())
     .then(data =>{
       console.log(data)
       setData(data)
     })
-  },[control])
+  },[user, control])
   const handeldelte = (id) =>{
-    fetch(`http://localhost:5000/delete/${id}`, {
+    // fetch(`http://localhost:5000/delete/${id}`, {
+    fetch(`https://assingemt-elevent-server-site.vercel.app/delete/${id}`, {
         method: 'DELETE',
         headers: {
             'content-type' : 'applicition/json'

@@ -19,7 +19,7 @@ import Update from './Page/Update';
 import Category from './Page/Category';
 import ViewDetels from './Components/ViewDetels/ViewDetels';
 
-// import PrivetRoute from './PrivetRoute/PrivetRoute';
+import PrivetRoute from './PrivetRoute/PrivetRoute';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,24 +29,26 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage></HomePage>,
+        
       },
       {
         path: "/addbook",
-        element: <AddBook></AddBook>,
+        element: <PrivetRoute><AddBook></AddBook></PrivetRoute>,
       },
       {
         path: "/allbooks",
-        element: <AllBooks></AllBooks>,
+        element: <PrivetRoute><AllBooks></AllBooks></PrivetRoute>,
         // loader: ({params}) => fetch(`http://localhost:5000/allbooks/${params.id}`)
       },
       {
         path: "/borrowedbooks",
-        element: <BorrowedBooks></BorrowedBooks>,
+        element: <PrivetRoute><BorrowedBooks></BorrowedBooks>,</PrivetRoute>
       },
       { path:'/allbook/:id',
-      element: <ViewDetels></ViewDetels>,
+      element: <PrivetRoute><ViewDetels></ViewDetels></PrivetRoute>,
       // loader: ({params}) => fetch(`http://localhost:5000/allbook/6641051731b76dbcbb89dbe8`) 
-      loader: ({params}) => fetch(`http://localhost:5000/allbook/${params.id}`) 
+      loader: ({params}) => fetch(`https://assingemt-elevent-server-site.vercel.app/allbook/${params.id}`) 
+      // loader: ({params}) => fetch(`http://localhost:5000/allbook/${params.id}`) 
       
 
       },
@@ -58,7 +60,8 @@ const router = createBrowserRouter([
       {
         path:'/category/:category',
         element:<Category></Category>,
-        loader: ({params}) => fetch(`http://localhost:5000/category/${params.category}`) 
+        loader: ({params}) => fetch(`https://assingemt-elevent-server-site.vercel.app/category/${params.category}`) 
+        // loader: ({params}) => fetch(`http://localhost:5000/category/${params.category}`) 
         
       },
       {

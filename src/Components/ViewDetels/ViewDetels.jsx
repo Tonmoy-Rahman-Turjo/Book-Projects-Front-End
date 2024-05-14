@@ -4,8 +4,8 @@ import Swal from 'sweetalert2'
 
 
 const ViewDetels = () => {
-    const { user } = UseAuth()
-    
+    const {user} = UseAuth()
+      console.log(user)
     const viewdetelse = useLoaderData()
     const handelborrow = event => {
         event.preventDefault()
@@ -15,9 +15,12 @@ const ViewDetels = () => {
         const category = form.category.value;
         const borrowedDate = form.borrowedDate.value;
         const returnDate = form.returnDate.value;
-        const borrow ={name, photourl, category, returnDate, borrowedDate}
+        const email = user.email;
+        const borrow ={name, photourl, category, returnDate, borrowedDate, email}
         console.log(borrow)
-        fetch('http://localhost:5000/borrow',{
+        // fetch('http://localhost:5000/borrow',{
+        fetch('https://assingemt-elevent-server-site.vercel.app/borrow',{
+        
             method:'POST',
             headers:{
                 'content-type': 'application/json'

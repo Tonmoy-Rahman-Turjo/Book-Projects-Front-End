@@ -5,12 +5,20 @@ import Bookcard from "../Components/BookCard/Bookcard";
 const AllBooks = () => {
     const[allbook, setAllbook] =useState([])
     useEffect(()=>{
-        // fetch('http://localhost:5000/addtouristspots')
-        fetch('http://localhost:5000/allbook')
+        
+        // fetch('http://localhost:5000/allbook',{
+        //   credentials: 'include'
+        // })
+
+        
+        // fetch('https://assingemt-elevent-server-site.vercel.app/allbook',{
+        //   credentials: 'include',
+        // })
+        fetch('https://assingemt-elevent-server-site.vercel.app/allbook')
         .then(res => res.json())
         .then(data => {
            setAllbook(data)
-            // console.log(touristSpots)
+       
         })
     },[])
     return (

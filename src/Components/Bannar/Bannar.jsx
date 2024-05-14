@@ -10,7 +10,7 @@ import { Autoplay } from 'swiper/modules';
 
 const Bannar = () => {
     const [text] = useTypewriter({
-        words: [ 'urrender yourself to nature to feed your mind '],
+        words: [ 'ind Your Next Favorite Book Today'],
         loop: 120,
         typeSpeed:80,
         delaySpeed:50,
@@ -44,11 +44,11 @@ const Bannar = () => {
       <SwiperSlide >  
            <div className=' h-96 lg:h-[400px]  fit lg:height-[2200px] rounded-md items-center flex justify-center' style={{backgroundImage: `url(https://i.ibb.co/wRtrz3H/public-library-with-many-books-shelves-107791-26807.jpg)`, backgroundRepeat:'no-repeat',  backgroundSize:"cover", backgroundAttachment:'fixed',  backgroundPositionY:'', backgroundPosition:'center' , width:'full' } }>
            <div className=' py-20 items-center'>
-            <h2 className='md:text-5xl text-lg  text-white font-extrabold'> Welcome our Web site</h2>
+            <h2 className='md:text-5xl text-lg  text-white font-extrabold'> Welcome our Book Web site</h2>
             <p className=' text-[#e6f17d8c] font-extrabold text-3xl w-52 sm:w-full  m-auto'>
                
-                <span className='text-[#4f51ce86] font-bold md:text-2xl text-center'>
-               {text}
+                <span className='text-[#6ce724] font-bold md:text-2xl text-center'>
+               F{text}
                 </span>
             </p>
            </div>
@@ -57,12 +57,12 @@ const Bannar = () => {
        <SwiperSlide >  
            <div className='  h-96 lg:h-[400px] fit lg:height-[2200px] rounded-md items-center flex justify-center' style={{backgroundImage: `url(https://i.ibb.co/C5MDtvv/young-woman-home-library-writing-with-wine-107791-5840.jpg)`, backgroundRepeat:'no-repeat',  backgroundSize:"cover", backgroundAttachment:'fixed',  backgroundPositionY:'', backgroundPosition:'center' , width:'full' } }>
            <div className=' py-20 items-center'>
-            <h2 className='md:text-5xl text-lg  text-white font-extrabold'>Coastal Bliss Awaits
+            <h2 className='md:text-5xl text-lg  text-white font-extrabold'>Find Your Story
                  </h2>
             <p className=' text-[#e6f17d8c] font-extrabold text-3xl w-52 sm:w-full  m-auto'>
                
-                <span className='text-[#4f51ce86] font-bold md:text-2xl text-center'>
-                    World
+                <span className='text-[#2cff1986] font-bold md:text-2xl text-center'>
+                Explore New Releases and Bestselling Books
                 </span>
             </p>
            </div>
@@ -71,12 +71,11 @@ const Bannar = () => {
        <SwiperSlide >  
            <div className='  h-96 lg:h-[400px] fit lg:height-[2200px] rounded-md items-center flex justify-center' style={{backgroundImage: `url(https://i.ibb.co/VpFP7S8/3d-rendering-classic-interior-23-2150943461.jpg)`, backgroundRepeat:'no-repeat',  backgroundSize:"cover", backgroundAttachment:'fixed',  backgroundPositionY:'', backgroundPosition:'center' , width:'full' } }>
            <div className=' py-20 items-center'>
-            <h2 className='md:text-5xl text-lg  text-white font-extrabold'>Coastal Bliss Awaits
-                 </h2>
+            <h2 className='md:text-5xl text-lg  text-white font-extrabold'>Books for Everyone </h2>
             <p className=' text-[#e6f17d8c] font-extrabold text-3xl w-52 sm:w-full  m-auto'>
                
-                <span className='text-[#4f51ce86] font-bold md:text-2xl text-center'>
-                    World
+                <span className='text-[#6dce4f86] font-bold md:text-2xl text-center'>
+                Discover Your Next Great Read Here
                 </span>
             </p>
            </div>

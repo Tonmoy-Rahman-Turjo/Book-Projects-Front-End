@@ -25,12 +25,13 @@ const Login = () => {
   })
   const googleGitHubLogin = event =>{
     event()
-    console.log(githubLogin)
+    // console.log(githubLogin)
     // setSuccess('')
     // setError('')
-    navigat(forms)
+      //  console.log(googleLogin)
     .then(result =>{
        console.log(result)
+       navigat(forms)
      })
      .catch(error =>
       // console.error(error)
