@@ -5,19 +5,19 @@ import Rating from 'react-rating';
 import { FaStar } from "react-icons/fa";
 import { FaTableList } from "react-icons/fa6";
 const AllBooks = () => {
-  const [view, setView] = useState('card');
+  const [openview, setopenView] = useState('card');
     const[allbook, setAllbook] =useState([])
     useEffect(()=>{
+      fetch('https://assingemt-elevent-server-site.vercel.app/allbook',{
+          credentials: 'include',
+        })
+        // fetch('https://assingemt-elevent-server-site.vercel.app/allbook')
         
         // fetch('http://localhost:5000/allbook',{
         //   credentials: 'include'
         // })
 
-        
-        // fetch('https://assingemt-elevent-server-site.vercel.app/allbook',{
-        //   credentials: 'include',
-        // })
-        fetch('https://assingemt-elevent-server-site.vercel.app/allbook')
+      
         .then(res => res.json())
         .then(data => {
            setAllbook(data)
@@ -32,20 +32,20 @@ const AllBooks = () => {
                  <div className="flex gap-7 justify-center mb-8">
                  <button 
                         className="bg-blue-500 hover:bg-black font-bold italic text-white px-4 py-2 mr-2 rounded" 
-                        onClick={() => setView('card')}
+                        onClick={() => setopenView('card')}
                     >
                         Card View
                     </button>
                     <button 
                       
                         className="bg-green-500 flex gap-2 items-center font-bold italic hover:bg-red-700 text-white px-4 py-2 rounded" 
-                        onClick={() => setView('table')}
+                        onClick={() => setopenView('table')}
                     >
                       <FaTableList />
                         Table View
                     </button>
                  </div>
-               { view ==="card" ?(
+               { openview ==="card" ?(
                   <div className="grid md:grid-cols-3 grid-col-1 gap-10">
                   {
                     allbook.map(bookCard =><Bookcard key={bookCard._id} bookCard={bookCard}></Bookcard> )
@@ -53,7 +53,7 @@ const AllBooks = () => {
                   </div>
                ):(
             
-                <table className="w-full overflow-x-scroll bg-white">
+                <table className="w-10/12 m-auto overflow-x-scroll bg-white">
                 <thead>
                     <tr>
                         
@@ -77,8 +77,8 @@ const AllBooks = () => {
           readonly
       /></td >
               
-              <td>
-              <Link to={`/update/${index._id}`}> <button className="btn  text-center bts text-white text-lg font-bold w-full bg-gradient-to-r from-[#518edf] to-[#f11fe7] my-3 ">Update</button></Link>
+              <td className="pr-3">
+              <Link to={`/update/${index._id}`}> <button className="btn  text-center bts text-white text-lg font-bold w-full bg-gradient-to-r from-[#518edf] to-[#f11fe7] my-3  ">Update</button></Link>
               </td>
           </tr>
       ))}

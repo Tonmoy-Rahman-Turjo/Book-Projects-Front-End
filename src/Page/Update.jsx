@@ -27,8 +27,8 @@ const Update = () => {
        
         const updateBook = { photourl, name, author, category, rating}
       
-        // fetch(`http://localhost:5000/updates/${id}`, {
-        fetch(`https://assingemt-elevent-server-site.vercel.app/updates/${id}`, {
+        fetch(`http://localhost:5000/updates/${id}`, {
+        // fetch(`https://assingemt-elevent-server-site.vercel.app/updates/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -51,8 +51,8 @@ const Update = () => {
            
     }
     useEffect(()=>{
-        // fetch(`http://localhost:5000/update/${id}`) 
-        fetch(`https://assingemt-elevent-server-site.vercel.app/update/${id}`) 
+        fetch(`http://localhost:5000/update/${id}`) 
+        // fetch(`https://assingemt-elevent-server-site.vercel.app/update/${id}`) 
         .then(res => res.json())
         .then(data =>{
             console.log(data)

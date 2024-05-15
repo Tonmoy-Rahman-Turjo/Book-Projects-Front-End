@@ -27,10 +27,10 @@ const AddBook = () => {
          const addBook ={ email,photourl, name, quntity, author, category, rating, description}
          console.log(addBook)
         //  fetch('http://localhost:5000/addbook',{
-            // fetch('https://assingemt-elevent-server-site.vercel.app/addbook',{
+          
                 // credentials: 'include',
             fetch('https://assingemt-elevent-server-site.vercel.app/addbook',{
-                
+                credentials: 'include',
                 method: 'POST',
                 headers:{
                   'content-type' : 'application/json'
@@ -140,7 +140,8 @@ const AddBook = () => {
             <span className="text-red-800 text-[8px]"><FaStarOfLife /></span>
         </div>
     </label>
-    <input type="text" placeholder=" Rating" name="rating" className="input input-bordered text-white font-bold bg-[#48eefa44]" required />
+    {/* type="number" id="rating" name="rating" min="1" max="5"  */}
+    <input type="number" placeholder=" Rating" step="0.1" min="1" max="5" name="rating" className="input input-bordered text-white font-bold bg-[#48eefa44]" required />
 </div>
 
 <div className="form-control lg:w-1/2">

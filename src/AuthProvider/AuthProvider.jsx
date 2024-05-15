@@ -42,22 +42,24 @@ const AuthProvider = ({children}) => {
       setUser(creatUser)
       console.log(user)
       console.log('creatuser', creatUser)
-      // const userEmail = creatUser?.email || user?.email
-      // const logUser ={email:userEmail}
-      // if(creatUser){
-      //       axios.post('http://localhost:5000/jwt', logUser, {withCredentials: true})
-      //       .then(res => {
-      //         console.log('token response',res.data)
-      //       })
-      // }
-      // else{
-      //   axios.post('http://localhost:5000/logout', logUser,{
-      //     withCredentials: true,
-      //   })
-      //   .then(res=>{
-      //     console.log(res.data)
-      //   })
-      // }
+      const userEmail = creatUser?.email || user?.email
+      const logUser ={email:userEmail}
+      if(creatUser){
+            // axios.post('http://localhost:5000/jwt', logUser, {withCredentials: true})
+            axios.post('https://assingemt-elevent-server-site.vercel.app/jwt', logUser, {withCredentials: true})
+            .then(res => {
+              console.log('token response',res.data)
+            })
+      }
+      else{
+        // axios.post('http://localhost:5000/logout', logUser,{
+        axios.post('https://assingemt-elevent-server-site.vercel.app/logout', logUser,{
+          withCredentials: true,
+        })
+        .then(res=>{
+          console.log(res.data)
+        })
+      }
         setLoding(false)
         })
         return () =>{
