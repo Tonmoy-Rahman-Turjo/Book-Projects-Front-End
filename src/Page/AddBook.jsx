@@ -92,7 +92,7 @@ const AddBook = () => {
                                 <span className="text-red-800 text-[8px]"><FaStarOfLife /></span>
                             </div>
                         </label>
-                        <input type="text" placeholder="Quantity" name="quantity" className="input input-bordered bg-[#48eefa44]" required />
+                        <input type="number" placeholder="Quantity" name="quantity" className="input input-bordered bg-[#48eefa44]" required />
                     </div>
                 </div>
                 <div className="flex flex-col lg:flex-row items-center gap-10 ">
@@ -140,7 +140,7 @@ const AddBook = () => {
             <span className="text-red-800 text-[8px]"><FaStarOfLife /></span>
         </div>
     </label>
-    {/* type="number" id="rating" name="rating" min="1" max="5"  */}
+    
     <input type="number" placeholder=" Rating" step="0.1" min="1" max="5" name="rating" className="input input-bordered text-white font-bold bg-[#48eefa44]" required />
 </div>
 
