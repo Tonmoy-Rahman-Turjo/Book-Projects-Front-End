@@ -13,7 +13,7 @@ const [datas, setData] = useState()
     fetch(`https://assingemt-elevent-server-site.vercel.app/borrows/${user.email}`)
     .then(res =>res.json())
     .then(data =>{
-      console.log(data)
+      // console.log(data)
       setData(data)
     })
   },[user, control])
@@ -42,7 +42,7 @@ const [datas, setData] = useState()
         // else if (data.isConfirmed) {
           
         //   }
-        console.log(data)
+        // console.log(data)
     })
 }
     return (

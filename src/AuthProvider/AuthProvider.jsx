@@ -40,8 +40,8 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
      const unsubcribe  = onAuthStateChanged(auth, creatUser=>{
       setUser(creatUser)
-      console.log(user)
-      console.log('creatuser', creatUser)
+      // console.log(user)
+      // console.log('creatuser', creatUser)
       const userEmail = creatUser?.email || user?.email
       const logUser ={email:userEmail}
       if(creatUser){

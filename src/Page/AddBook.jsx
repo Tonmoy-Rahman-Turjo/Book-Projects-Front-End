@@ -26,7 +26,7 @@ const AddBook = () => {
          const email = user.email;
          const contents = form.contents.value;
          const addBook ={ email,photourl, name, quntity, author, category, rating, description ,contents}
-         console.log(addBook)
+        //  console.log(addBook)
         //  fetch('http://localhost:5000/addbook',{
           
                 // credentials: 'include',
@@ -49,7 +49,7 @@ const AddBook = () => {
                       timer: 1500
                     });
                   }
-                console.log(data)
+                // console.log(data)
              })
 
       }
