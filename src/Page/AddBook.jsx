@@ -24,7 +24,8 @@ const AddBook = () => {
          const rating = form.rating.value;
          const description = form.description.value;
          const email = user.email;
-         const addBook ={ email,photourl, name, quntity, author, category, rating, description}
+         const contents = form.contents.value;
+         const addBook ={ email,photourl, name, quntity, author, category, rating, description ,contents}
          console.log(addBook)
         //  fetch('http://localhost:5000/addbook',{
           
@@ -153,6 +154,19 @@ const AddBook = () => {
     </label>
     <input type="text" placeholder="type a Short description" name="description" className="input input-bordered bg-[#48eefa44]" required />
 </div>
+
+
+</div>
+<div className="form-control lg:w-1/2">
+    <label className="label">
+        <div className="flex">
+            <span className="label-text font-bold">Texts about the book </span>
+            <span className="text-red-800 text-[8px]"><FaStarOfLife /></span>
+        </div>
+    </label>
+    
+        <textarea id="contents" name="contents" rows="4" cols="50" required></textarea>
+   
 </div>
 
        <button className="btn bg-gradient-to-r from-[#f35f84] to-[#F3429C] rounded-t-lg my-3 font-bold italic text-white text-2xl lg:w-[300px] m-auto">Add Now</button>

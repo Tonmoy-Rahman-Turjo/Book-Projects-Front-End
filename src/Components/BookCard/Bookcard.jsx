@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Rating from 'react-rating';
 import { FaStar } from "react-icons/fa";
 const Bookcard = ({ bookCard }) => {
-    const { photourl, name, author, category, rating, _id } = bookCard
+    const { photourl, name, author, category, rating, _id, contents } = bookCard
     const [text] = useTypewriter({
         words: ['ook Point'],
         loop: 0,
@@ -41,6 +41,7 @@ const Bookcard = ({ bookCard }) => {
                                 /></span></h2>
                            
                         </div>
+                       
                         <div className="flex justify-center px-3 w-full " >
                             <Link to={`/update/${_id}`}> <button className="btn text-center bts text-white text-lg font-bold w-full bg-gradient-to-r from-[#518edf] to-[#f11fe7] mb-3 ">Update</button></Link>
                         </div>

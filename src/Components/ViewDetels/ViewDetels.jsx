@@ -57,17 +57,21 @@ const ViewDetels = () => {
                         <h2 className="text-black font-bold text-base">Author :-<span className="ml-2 text-green-700 font-bold italic">{viewdetelse.author}</span></h2>
                         <h2 className="text-black font-bold text-base">Category p-<span className="ml-2 text-green-700 font-bold">{viewdetelse.category}</span></h2>
                     </div>
-                    <h2 className="flex gap-2  text-black font-bold">Rating:-<span>{viewdetelse.rating}</span></h2>
-                    <h2 className="flex gap-2  text-black font-bold">Quantity:-<span><Rating
-          emptySymbol={<FaStar color="#ccc" />} 
-          fullSymbol={<FaStar color="#ffc107" />} 
-          initialRating={viewdetelse.rating}
-          readonly
-      /></span></h2>
-                    <h2 className="fl ex gap-2 text-black font-bold">Quantity:-<span>{viewdetelse.description}</span></h2>
-
-                    <div className=" flex justify-center">
+                    <h2 className="flex gap-2  text-black font-bold">Rating:-<span>
+                    <Rating
+                                    emptySymbol={<FaStar color="#ccc" />} 
+                                    fullSymbol={<FaStar color="#ffc107" />} 
+                                    initialRating={viewdetelse.rating}
+                                    readonly
+                                />
+                    </span></h2>
+                    <h2 className="flex gap-2  text-black font-bold">Quantity:-<span>{viewdetelse.quntity}</span></h2>
+                    <h2 className=" gap-2 mb-3 text-black font-bold">Description:-<span className="text-[#636161] text-base italic ml-2 ">{viewdetelse.description}</span></h2>
+                  
+                     <h2 className=" gap-4 "> <span className="text-red-900 font-bold italic border-t-2 ">texts about the book</span> { viewdetelse.contents}</h2>
                     
+                    <div className=" flex justify-center">
+                     
                         <label htmlFor="my_modal_6" className="btn bg-black text-white">Borrow</label>
 
                         {/* Put this part before </body> tag */}
