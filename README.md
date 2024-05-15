@@ -1,8 +1,18 @@
-# React + Vite
+    ##BOOK POINT
+    Book Point is a book library webste
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    ##5 bolet Poin this website
+    1. user frinedly website
+    2.server control full website
+    3.This website all time provide Update book
+    4. supper fast loding system 
+    5. user  Authonication system Firebase 
 
-Currently, two official plugins are available:
+    ## web site mack use packge
+    1. React panackge 
+    2. tailwind
+    3.daisy ui
+    4.java scripe 
+    
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
