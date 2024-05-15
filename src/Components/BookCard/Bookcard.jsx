@@ -5,8 +5,9 @@ import './bookcard.css'
 import { Link } from 'react-router-dom';
 import Rating from 'react-rating';
 import { FaStar } from "react-icons/fa";
+import 'aos/dist/aos.css'
 const Bookcard = ({ bookCard }) => {
-    const { photourl, name, author, category, rating, _id, contents } = bookCard
+    const { photourl, name, author, category, rating, _id } = bookCard
     const [text] = useTypewriter({
         words: ['ook Point'],
         loop: 0,
@@ -14,7 +15,7 @@ const Bookcard = ({ bookCard }) => {
     })
     return (
         <div>
-            <div className='hero '>
+            <div  className='hero  '>
                 <div className="border-4 shadow-2xl shadow-emerald-950 rounded bg-gradient-to-r from-[#3cccc5] to-[#3ef575] bg-[#e95959] ">
 
                     <div className='flex gap-3 items-center justify-center'>
