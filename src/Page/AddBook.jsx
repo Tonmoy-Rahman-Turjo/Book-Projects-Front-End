@@ -24,8 +24,8 @@ const AddBook = () => {
          const rating = form.rating.value;
          const description = form.description.value;
          const email = user.email;
-         const contents = form.contents.value;
-         const addBook ={ email,photourl, name, quntity, author, category, rating, description ,contents}
+         const contents = form.contents.value; 
+         const addBook ={ email,photourl, name, quntity, author, category, rating, description, contents}
         //  console.log(addBook)
         //  fetch('http://localhost:5000/addbook',{
           

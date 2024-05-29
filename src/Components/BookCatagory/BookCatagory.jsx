@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -6,14 +7,31 @@ const BookCatagory = () => {
     const [categorye, setCatagory] = useState([])
     useEffect(()=>{
         // fetch('http://localhost:5000/category')
-        fetch('https://assingemt-elevent-server-site.vercel.app/category')
+        // fetch('https://assingemt-elhttps://assingemt-elevent-server-site.vercel.app/categoryevent-server-site.vercel.app/category')
         // fetch('https://assingemt-elevent-server-site.vercel.app/category')
-        .then(res => res.json())
-        .then(data=>{
-            console.log(data)
-            setCatagory(data)
+        // .then(res => res.json())
+        // .then(data=>{
+        //     // console.log(data)
+        //     setCatagory(data)
+        // })
+        // .catch(error=>{
+        //     console.error(error)
+        // })
+        axios.get('https://assingemt-elevent-server-site.vercel.app/category',
+            {
+                withCredentials: true
+            }
+        ).then(res =>{
+            console.log(res.data)
+            setCatagory(res.data)
+
+            
+        })
+        .catch(error =>{
+            console.log(error)
         })
     },[])
+
 
     return (
         <div>

@@ -20,8 +20,8 @@ const Category = () => {
                      </div>
                      <h2 className="flex gap-2 mx-2 text-black font-bold">Rating:-<span>{item.rating}
                      <Rating
-                                    emptySymbol={<FaStar color="#ccc" />} // Empty star icon
-                                    fullSymbol={<FaStar color="#ffc107" />} // Full star icon
+                                    emptySymbol={<FaStar color="#ccc" />} 
+                                    fullSymbol={<FaStar color="#ffc107" />} 
                                     initialRating={item.rating}
                                     readonly
                                 />
